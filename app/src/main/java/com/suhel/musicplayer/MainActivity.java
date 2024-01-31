@@ -1,9 +1,12 @@
 package com.suhel.musicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.icu.text.Transliterator;
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                             itmes[i]=mySongs.get(i).getName().replace(".mp3","");
                         }
 
-                        ArrayAdapter<String> adapter=new ArrayAdapter<String>( MainActivity.this, android.R.layout.simple_list_item_1,itmes);
+                        ArrayAdapter<String> adapter=new ArrayAdapter<String>( MainActivity.this,android.R.layout.simple_list_item_1,itmes);
                         listView.setAdapter(adapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
